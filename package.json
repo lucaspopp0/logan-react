@@ -7,7 +7,9 @@
     "bootstrap": "lerna bootstrap --hoist",
     "bootstrap:production": "lerna bootstrap --hoist -- --production --no-optional",
     "clean-all": "lerna clean --yes",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint . --quiet -c .eslintrc.js",
+    "lint-fix": "npm run lint -- --fix"
   },
   "repository": {
     "type": "git",
@@ -23,7 +25,12 @@
   },
   "homepage": "https://github.com/lucaspopp0/logan-react#readme",
   "devDependencies": {
+    "eslint": "^7.7.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-jest": "^23.20.0",
+    "eslint-plugin-prettier": "^3.1.4",
     "jest": "^26.4.2",
-    "lerna": "^3.22.1"
+    "lerna": "^3.22.1",
+    "prettier": "^2.1.1"
   }
 }
