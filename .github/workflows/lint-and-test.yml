@@ -5,13 +5,11 @@ name: Linting and Tests
 
 on: pull_request
 
-defaults:
-  runs-on: ubuntu-latest
-  env:
-    CI: true
-
 jobs:
   lint:
+    runs-on: ubuntu-latest
+    env:
+      CI: true
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
@@ -19,6 +17,9 @@ jobs:
       - run: npm run bootstrap
       - run: npm run lint
   test:
+    runs-on: ubuntu-latest
+    env:
+      CI: true
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
