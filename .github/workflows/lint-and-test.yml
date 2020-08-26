@@ -25,6 +25,8 @@ jobs:
     env:
       CI: true
     steps:
+      - run: pwd
+      - run: ls
       - run: npm run lint
   test:
     needs: setup
@@ -32,4 +34,6 @@ jobs:
     env:
       CI: true
     steps:
+      - run: pwd
+      - run: ls
       - run: npm run test
