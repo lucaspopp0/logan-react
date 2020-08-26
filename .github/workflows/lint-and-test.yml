@@ -13,11 +13,12 @@ jobs:
     steps:
       - name: Check out repository
         uses: actions/checkout@v2
-      - name: Install Node and Lerna
+      - name: Install Node
         uses: actions/setup-node@v1
-        run: npm i lerna
-      - name: Bootstrap dependencies
-        run: npm run bootstrap
+      - name: Install Lerna and bootstrap dependencies
+        run: |
+          npm i lerna
+          npm run bootstrap
       - name: Run lint check
         run: npm run lint
       - name: Run tests
